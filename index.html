@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <title>Sia | Manutencao</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <!-- mensagem de enviado checklist -->
+   
+
+    <div class="container">
+        <main class="card">
+            <form>
+                <h1 class="title">Editar equipamento</h1>
+                <div class="input-wrapper">
+                    <label for="imei">IMEI</label>
+                    <div class="switch-container">
+                        <input id="imei" placeholder="Digite um IMEI válido" type="text" pattern="[0-9]*"
+                            inputmode="numeric" title="Apenas números são permitidos" oninput="validateImei()" />
+                        <label for="switchCheckbox" class="switch">
+                            <input type="checkbox" id="switchCheckbox">
+                            <span class="slider"></span>
+                        </label>
+                        <span class="switch-label">Sem Chamado</span>
+                    </div>
+                </div>
+
+
+                <button id="protocolo">Selecionar protocolo original</button>
+
+                <div class="input-wrapper">
+                    <div class="simcard-container">
+                        <label for="simcard1">Simcard 1</label>
+                        <input id="simcard1" placeholder="Simcard 1" type="text" pattern="[0-9]*" inputmode="numeric"
+                            title="Apenas números são permitidos" oninput="validateSimcard('simcard1')" />
+                    </div>
+                    <div class="simcard2-container">
+                        <label for="simcard2">Simcard 2</label>
+                        <input id="simcard2" placeholder="Simcard 2" type="text" pattern="[0-9]*" inputmode="numeric"
+                            title="Apenas números são permitidos" oninput="validateSimcard('simcard2')" />
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="weight">Observação do cliente</label>
+                        <div id="resizableContainer">
+                            <textarea id="resizableInput" placeholder=" Observação do cliente"
+                                oninput="adjustTextareaHeight()"></textarea>
+                        </div>
+                    </div><br><br>
+
+                    <h1 class="title">Cheklist</h1>
+                    
+                    <div class="dropdown2">
+                
+                        <button onclick="toggleDropdown('selecao0')" class="dropbtnwhite" disabled>Gaveta de Chip </button>
+                        <div id="selecao0" class="dropdown2-content">
+
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);"> OK </a>
+
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">DANIFICADO</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"> INCOMPATÍVEL </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"> NÃO Recebido </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"> NÃO se Aplica </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                  
+
+                    <!-- Adicionado input -->
+                    <div class="inputRight2">
+                        <button id="gavetainfo" disabled> GAVETA DE CHIP | ...</button>
+                    </div>
+                    <div class="dropdown">
+                        <button onclick="toggleDropdown('selecao')" class="dropbtn" disabled >Bateria</button>
+                        <div id="selecao" class="dropdown-content">
+
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);"> NÃO Recebido </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"> Recebido </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Adicionado input -->
+
+                    <div class="inputRight" >
+                        <button id="batteryinfo" disabled> BATERIA | RECEBIDO</button>
+                    </div>
+
+
+
+
+                    <div class="dropdown2">
+                        <button onclick="toggleDropdown('selecao2')" class="dropbtnwhite" disabled>Cabo USB - ATM</button>
+                        <div id="selecao2" class="dropdown2-content">
+
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);"> OK </a>
+
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">DANIFICADO</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"> INCOMPATÍVEL </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"> NÃO Recebido </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <!-- Adicionado input -->
+                    <div class="inputRight2">
+                        <button id="cabousbinfo" disabled> CABO USB - ATM | Nao recebido</button>
+                    </div>
+
+
+
+                    <div class="dropdown">
+                        <button onclick="toggleDropdown('selecao3')" class="dropbtn" disabled>Fonte - ATM</button>
+                        <div id="selecao3" class="dropdown-content">
+
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);"> OK </a>
+
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">DANIFICADO</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"> INCOMPATÍVEL </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"> NÃO Recebido </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <!-- Adicionado input -->
+                    <div class="inputRight">
+                        <button id="fonteinfo"disabled> FONTE - ATM | Nao recebido</button>
+                    </div>
+                    <div class="dropdown2">
+                        <button onclick="toggleDropdown('selecao4')" class="dropbtnwhite" disabled>Cabo USB - Terceiros</button>
+                        <div id="selecao4" class="dropdown2-content">
+
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);"> OK </a>
+
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">DANIFICADO</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"> INCOMPATÍVEL </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"> NÃO Recebido </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <!-- Adicionado input -->
+                    <div class="inputRight2">
+                        <button id="cabousbterceirosinfo"disabled> CABO USB - TERCEIROS | Nao recebido</button>
+                    </div>
+                    <div class="dropdown">
+                        <button onclick="toggleDropdown('selecao5')" class="dropbtn" disabled>Fonte - Terceiros</button>
+                        <div id="selecao5" class="dropdown-content">
+
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);"> OK </a>
+
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">DANIFICADO</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"> INCOMPATÍVEL </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"> NÃO Recebido </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <!-- Adicionado input -->
+                    <div class="inputRight">
+                        <button id="fonteterceirosinfo" disabled> FONTE - TERCEIROS | Nao recebido</button>
+                    </div>
+                    <div class="dropdown2">
+                        <button onclick="toggleDropdown('selecao6')" class="dropbtnwhite" disabled>Capa TPU</button>
+                        <div id="selecao6" class="dropdown2-content">
+
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);"> OK </a>
+
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">DANIFICADO</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"> INCOMPATÍVEL </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"> NÃO Recebido </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <!-- Adicionado input -->
+                    <div class="inputRight2">
+                        <button id="capatpuinfo"disabled> CAPA TPU | Nao recebido</button>
+                    </div>
+                    <div class="dropdown">
+                        <button onclick="toggleDropdown('selecao7')" class="dropbtn" disabled>Capa Couro</button>
+                        <div id="selecao7" class="dropdown-content">
+
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);"> OK </a>
+
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">DANIFICADO</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"> INCOMPATÍVEL </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"> NÃO Recebido </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <!-- Adicionado input -->
+                    <div class="inputRight">
+                        <button id="capacouroinfo"disabled> CAPA COURO | Nao recebido</button>
+                    </div>
+
+                    <div class="dropdown2">
+                        <button onclick="toggleDropdown('selecao8')" class="dropbtnwhite" disabled>Capa Rugged</button>
+                        <div id="selecao8" class="dropdown2-content">
+
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);"> OK </a>
+
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">DANIFICADO</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"> INCOMPATÍVEL </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"> NÃO Recebido </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <!-- Adicionado input -->
+                    <div class="inputRight2">
+                        <button id="caparuggedinfo"disabled> CAPA RUGGED | Nao recebido</button>
+                    </div>
+                    <div class="dropdown">
+                        <button onclick="toggleDropdown('selecao9')" class="dropbtn" disabled>Chip</button>
+                        <div id="selecao9" class="dropdown-content">
+
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);">ATM - OK </a>
+
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">ATM - DANIFICADO</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"> CLIENTE </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"> NÃO Recebido </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <!-- Adicionado input -->
+                    <div class="inputRight">
+                        <button id="chipinfo"disabled> CHIP | Nao recebido</button>
+                    </div>
+
+                    <!-- <div id="overlay" class="overlay">
+                        <p>Checklist Finalizado</p>
+                      </div> -->
+
+                    <!-- rodape -->
+                    <footer>
+                        <button id="left">
+                            <img src="img/qr.png" alt="qrcode">Incluir Foto </button>
+
+                        <button id="right2">Cancelar</button>
+                        <button id="right">Salvar</button>
+
+
+                    </footer>
+
+            </form>
+         
+
+        </main>
+      
+    </div>
+
+    <!-- para exibir o pop up de enviado com sucesso   -->
+<!-- Pop-up de Checklist Finalizado -->
+<div id="checklistModal" class="modal-wrapper">
+    <div class="modal card">
+        <h2 class="title">
+            <button id="closeModal" class="close">
+                <img src="img/close.svg" alt="Fechar pop-up">
+            </button>
+            <span>Checklist Finalizado</span>
+            <img  id="ok"   src="img/ok.png" alt="ok">
+        </h2>
+    </div>
+</div>
+
+</body>
+
+</html>

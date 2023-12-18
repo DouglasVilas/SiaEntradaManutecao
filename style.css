@@ -1,0 +1,443 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definição de variáveis globais */
+
+    :root {
+        font-size: 62.5%;
+    }
+
+/* Estilos da mensagem enviada */
+
+.modal-wrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.modal {
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px; /* Ajuste conforme necessário */
+    right: 10px; /* Ajuste conforme necessário */
+}
+
+.close img {
+    width: 20px;
+    height: 20px;
+}
+
+.modal .modal-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal .title {
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Alinha o conteúdo ao topo */
+    flex-direction: column;
+}
+
+#ok {
+    margin-top: 20px;
+    align-self: center; /* Ajuste conforme necessário */
+ /* Para centralizar a imagem horizontalmente */
+}
+
+/* Dropdown button styles */
+.dropbtn {
+    background-color: #c0c0c0;
+    color: black;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+/* Dropdown content styles */
+.dropdown-content {
+    display: none !important;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    margin-left: 40px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    text-decoration: none;
+}
+
+.dropdown-content a,
+.dropdown2-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropbtn:hover span,
+.dropbtnwhite:hover span {
+  color: white;
+}
+
+.dropbtn:hover + .dropdown-content,
+.dropdown-content:hover,
+.dropbtnwhite:hover + .dropdown2-content,
+.dropdown2-content:hover {
+    display: block !important;
+    
+}
+.dropbtn:not(:hover) + .dropdown-content:not(:hover),
+.dropbtnwhite:not(:hover) + .dropdown2-content:not(:hover) {
+    display: none !important;
+
+    
+    
+}
+
+/* selecaoright  */
+.dropdown2-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;   
+    margin-left: 150px;
+    color:black;
+    text-decoration: none;
+}
+.dropbtnwhite{
+    display: flex;
+    justify-content: flex; 
+    margin-left: 100px;
+    background-color: white;
+    color:black;
+    text-align: center;
+    border: 1px solid black;
+ 
+}
+
+/* input styles */
+
+.inputRight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -52px;
+    margin-left: 300px;
+}
+.inputRight button{
+    background:white;
+    border: 1px solid black;
+    width: 62%;
+   
+
+}
+.inputRight2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -60px;
+    margin-left: 300px;
+    
+}
+.inputRight2 button{
+    width: 62%;
+}
+
+/* mudando de cor que teve selecao para saber que foi alterado  */
+.inputRight button.selected,
+.inputRight2 button.selected {
+    background-color: red !important;
+    color: black;
+}
+/* Body styles */
+body {
+    background-color: #040924;
+    background-position: top center;
+    background-size: cover;
+    height: 100vh;
+}
+
+/* Container styles */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Card styles */
+.card {
+    margin-top: 30px;
+    padding: 2rem 5rem 1rem;
+    background: white;
+    max-width: 80%;
+    margin-inline: auto;
+    box-shadow: 0 .2rem .4rem rgba(0, 0, 0, 0.1);
+    border-radius: .6rem;
+
+    display: flex; /* Adiciona display flex para alinhar os elementos em coluna */
+    flex-direction: column; /* Alinha os elementos em uma coluna */
+    justify-content: space-between; /* Adiciona espaço entre os elementos */
+}
+
+
+
+/*switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+}
+.switch-container {
+    display: flex;
+    align-items: center;
+}
+.switch-label {
+    margin-left: -20px; 
+    color: black; 
+    font-size: 20px; 
+  
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: blue;
+}
+
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Form styles */
+form {
+    width:80rem;
+}
+
+
+
+form label {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    color: var(--tt-label);
+    margin-bottom: .8rem;
+    display: block;
+}
+
+form input {
+    width: 50%; 
+    border: 1px solid black;
+    padding: 1.6rem;
+    border-radius: .4rem;
+}
+
+form input:focus {
+    outline: 3px solid blue;
+}
+
+form input::placeholder {
+    color: #040924;
+}
+
+/* Input wrapper styles */
+.input-wrapper {
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+
+}
+
+.input-wrapper label,
+.input-wrapper input {
+    margin-right: 30px;
+}
+
+
+/* Button styles */
+form button {
+    margin-top: 1rem;
+    padding: 1.6rem;
+    width: 30%;
+    border-radius: .4rem;
+    border: none;
+    background-color: #c0c0c0;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background .3s;
+}
+
+form button:hover {
+    background: blue;
+    color: white;
+}
+
+/* simcards styles */
+
+.simcard-container {
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.simcard-container label {
+    margin-bottom: 5px; 
+}
+
+.simcard2-container {
+    margin-left: 400px; 
+    margin-top:-90px;
+    width: 100%; 
+    padding: 1.6rem;
+    border-radius: .4rem;
+}
+/* Edit button styles */
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 10px 0;
+}
+
+ul li a {
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 24px;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+ul li a:hover {
+    background-color: rgb(0, 191, 255);
+}
+
+/* Resizable input styles */
+#resizableContainer {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    border: 1px solid black;
+    overflow: hidden;
+    resize: vertical;
+}
+
+#resizableInput {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    outline: none;
+    max-height: 100%;
+    border: none;
+}
+
+#resizableInput:focus {
+    border: 3px solid blue;
+}
+
+
+/* rodape */
+
+footer {
+    background-color:#c0c0c0;
+    padding: 20rem 3.2rem;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+    padding: 1.6rem;
+    display: flex;
+    justify-content: space-between; /* Distribui os elementos ao longo do contêiner */
+   
+}
+footer button {
+    color: white;
+    width: 20%;
+}
+
+button#right {
+    background: blue;
+   
+}
+
+button#right2 {
+    background: red;
+    margin-right: -280px;
+}
+
+button#left {
+    background: blue;
+}
+
+button#left img {
+    width: 20px;
+    margin-right: 5px; /* Ajuste o espaçamento conforme necessário */
+}
